@@ -9,7 +9,7 @@
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 0; /* Remove padding */
+            padding: 0;
             text-align: center;
             color: white;
             overflow: hidden; /* Prevents scrolling */
@@ -85,11 +85,10 @@
             left: 50%;
             width: 100vw;
             height: 100vh;
-            object-fit: fill; /* Change to fill */
-            transform: translate(-50%, -50%); /* Center the video */
+            object-fit: cover; /* Use cover to avoid distortion */
+            transform: translate(-50%, -50%);
             z-index: -1;
         }
-
         /* Fallback image */
         .fallback-image {
             position: fixed;
@@ -97,7 +96,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-image: url('fallback-image.jpg'); /* Replace with your fallback image */
+            background-image: url('fallback-image.jpg'); /* Your fallback image */
             background-size: cover;
             background-position: center;
             z-index: -1;
@@ -144,7 +143,6 @@
             </a>
         </li>
     </ul>
-
     <script>
         const links = document.querySelectorAll('.social-links a');
 
