@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOIC Social Media Links</title>
-    <link rel="icon" type="image/x-icon" href="logo-soic1-01.png"> <!-- Favicon link -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- Favicon link -->
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 0; /* Remove padding */
             text-align: center;
             color: white;
             overflow: hidden; /* Prevents scrolling */
@@ -85,10 +85,11 @@
             left: 50%;
             width: 100vw;
             height: 100vh;
-            object-fit: cover; /* Use cover to avoid distortion */
-            transform: translate(-50%, -50%);
+            object-fit: fill; /* Change to fill */
+            transform: translate(-50%, -50%); /* Center the video */
             z-index: -1;
         }
+
         /* Fallback image */
         .fallback-image {
             position: fixed;
@@ -96,7 +97,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-image: url('fallback-image.jpg'); /* Your fallback image */
+            background-image: url('Registration.jpg'); /* Fallback image set to Registration.jpg */
             background-size: cover;
             background-position: center;
             z-index: -1;
@@ -143,6 +144,7 @@
             </a>
         </li>
     </ul>
+
     <script>
         const links = document.querySelectorAll('.social-links a');
 
