@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOIC Social Media Links</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0; /* Remove padding */
+            text-align: center;
+            color: white;
+            overflow: hidden; /* Prevents scrolling */
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .social-links {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .social-links li {
+            margin: 20px 0;
+            transition: transform 0.3s ease;
+        }
+        .social-links a {
+            text-decoration: none;
+            color: white;
+            background-color: rgba(0, 123, 255, 0.9);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.5em;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .social-links img {
+            width: 32px;
+            height: 32px;
+            margin-right: 15px;
+        }
+        .social-links a:hover {
+            background-color: rgba(0, 87, 179, 0.9);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+        }
+        .social-links li:hover {
+            transform: scale(1.1);
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+                margin-bottom: 30px;
+            }
+            .social-links a {
+                padding: 10px 20px; 
+                font-size: 1.2em; 
+            }
+            .social-links img {
+                width: 24px; 
+                height: 24px;
+                margin-right: 10px; 
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em; 
+            }
+            .social-links a {
+                padding: 8px 15px; 
+                font-size: 1em; 
+            }
+        }
+        /* Video as background */
+        .video-background {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 100vh;
+            object-fit: fill; /* Change to fill */
+            transform: translate(-50%, -50%); /* Center the video */
+            z-index: -1;
+        }
+
+        /* Fallback image */
+        .fallback-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('fallback-image.jpg'); /* Replace with your fallback image */
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            display: none; /* Hide by default */
+        }
+    </style>
+</head>
+<body>
+    <video class="video-background" autoplay muted loop onerror="this.style.display='none'; document.querySelector('.fallback-image').style.display='block';">
+        <source src="WEP.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="fallback-image"></div> <!-- Fallback image div -->
+    <h1>SOIC Social Media Links</h1>
+    <ul class="social-links">
+        <li>
+            <a href="https://www.instagram.com/soicofficial" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo"> Instagram
+            </a>
+        </li>
+        <li>
+            <a href="https://www.facebook.com/Soicofficial" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo"> Facebook
+            </a>
+        </li>
+        <li>
+            <a href="https://www.snapchat.com/add/soic_school?invite_id=qNXSg7mP&locale=en_EG&share_id=JGF27NHyRQeYehBmNJuZ6g&sid=a1f37fd51cf0452d8873b3d0384fcd16" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/en/c/c4/Snapchat_logo.svg" alt="Snapchat Logo"> Snapchat
+            </a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQEmCYEZCc2sZQAAAZIAC4ko1f_rTGWx2DzeDfmWXDk0jZ6vkZM1yUEGh6JbxYbemj-7SOUJu6qRmQ4Vr61dLdfy3aP5XIOmYSL_ZKajPTUzlCWsw12z68IEqzyYtkVNbzGZhlw=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fsoic-cinema-school-463208329%3Futm_source%3Dshare%26utm_campaign%3Dshare_via%26utm_content%3Dprofile%26utm_medium%3Dios_app" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/LinkedIn_2021.svg" alt="LinkedIn Logo"> LinkedIn
+            </a>
+        </li>
+        <li>
+            <a href="https://www.tiktok.com/@soiceg" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok Logo"> TikTok
+            </a>
+        </li>
+        <li>
+            <a href="https://wa.me/message/UH5JDX2DV2L5C1" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo"> WhatsApp
+            </a>
+        </li>
+    </ul>
+
+    <script>
+        const links = document.querySelectorAll('.social-links a');
+
+        links.forEach(link => {
+            link.addEventListener('mouseover', () => {
+                link.style.transform = 'scale(1.1)';
+            });
+            link.addEventListener('mouseout', () => {
+                link.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
