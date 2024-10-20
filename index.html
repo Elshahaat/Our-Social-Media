@@ -78,7 +78,6 @@
                 font-size: 1em; 
             }
         }
-        /* Video as background */
         .video-background {
             position: fixed;
             top: 50%;
@@ -90,7 +89,6 @@
             z-index: -1;
         }
 
-        /* Fallback image */
         .fallback-image {
             position: fixed;
             top: 0;
@@ -146,12 +144,10 @@
     </ul>
 
     <script>
-        // Function to detect mobile devices
         function isMobile() {
             return /Mobi|Android/i.test(navigator.userAgent);
         }
 
-        // Change the video source if on mobile
         const videoElement = document.getElementById('backgroundVideo');
         if (isMobile()) {
             const mobileSource = document.createElement('source');
