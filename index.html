@@ -106,8 +106,8 @@
     </style>
 </head>
 <body>
-    <video class="video-background" autoplay muted loop onerror="this.style.display='none'; document.querySelector('.fallback-image').style.display='block';">
-        <source src="WEP.mp4" type="video/mp4"> <!-- Video source updated -->
+    <video class="video-background" id="backgroundVideo" autoplay muted loop onerror="this.style.display='none'; document.querySelector('.fallback-image').style.display='block';">
+        <source src="WEP.mp4" type="video/mp4"> <!-- Default video source -->
         Your browser does not support the video tag.
     </video>
     <div class="fallback-image"></div> <!-- Fallback image div -->
@@ -146,6 +146,21 @@
     </ul>
 
     <script>
+        // Function to detect mobile devices
+        function isMobile() {
+            return /Mobi|Android/i.test(navigator.userAgent);
+        }
+
+        // Change the video source if on mobile
+        const videoElement = document.getElementById('backgroundVideo');
+        if (isMobile()) {
+            const mobileSource = document.createElement('source');
+            mobileSource.src = 'reel.mp4'; // Specify your mobile video here
+            mobileSource.type = 'video/mp4';
+            videoElement.appendChild(mobileSource);
+            videoElement.load();
+        }
+
         const links = document.querySelectorAll('.social-links a');
 
         links.forEach(link => {
